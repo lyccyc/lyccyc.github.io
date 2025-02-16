@@ -1,0 +1,4 @@
+baseURL = 'https://lyccyc.github.io/'
+languageCode = 'en-us'
+title = 'Penguin Blog'
+theme = "diary"
