@@ -2,3 +2,46 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     line-height: 1.5;
 }
+
+.info-box {
+  border-left: 4px solid #2980b9;
+  background-color: #2980b9;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* 加在這裡 */
+.danger-box {
+  border-left: 4px solid #8A0000;
+  background-color: #8A0000;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* 加在這裡 */
+.warning-box {
+  border-left: 4px solid #fff200;
+  background-color: #fff200;
+  color :black;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+.flag-box {
+  border-left: 4px solid #81E7AF;
+  background-color: #81E7AF;
+  color :black;
+  font-size:large;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+.fail{
+    color:red;
+    font-size: large;
+}
+

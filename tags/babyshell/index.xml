@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Babyshell on Penguin&#39;s Website</title>
+    <link>http://localhost:1313/tags/babyshell/</link>
+    <description>Recent content in Babyshell on Penguin&#39;s Website</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 29 Jun 2025 22:06:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/babyshell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF_babyshell</title>
+      <link>http://localhost:1313/post/ctf_babyshell/</link>
+      <pubDate>Sun, 29 Jun 2025 22:06:02 +0800</pubDate>
+      <guid>http://localhost:1313/post/ctf_babyshell/</guid>
+      <description>&lt;h1 id=&#34;babyshell&#34;&gt;BabyShell&lt;/h1&gt;&#xA;&lt;p&gt;這次的題目是由&lt;a href=&#34;https://github.com/Chw41&#34;&gt;Chw41&lt;/a&gt;出題，&lt;a href=&#34;https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell&#34;&gt;題目來源&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
