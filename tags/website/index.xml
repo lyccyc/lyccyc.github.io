@@ -1,26 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Website on Penguin&#39;s Website</title>
-    <link>http://localhost:1313/tags/website/</link>
-    <description>Recent content in Website on Penguin&#39;s Website</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Sun, 29 Jun 2025 22:06:02 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/website/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CTF_babyshell</title>
-      <link>http://localhost:1313/post/ctf_babyshell/</link>
-      <pubDate>Sun, 29 Jun 2025 22:06:02 +0800</pubDate>
-      <guid>http://localhost:1313/post/ctf_babyshell/</guid>
-      <description>&lt;h1 id=&#34;babyshell&#34;&gt;BabyShell&lt;/h1&gt;&#xA;&lt;p&gt;這次的題目是由&lt;a href=&#34;https://github.com/Chw41&#34;&gt;Chw41&lt;/a&gt;出題，&lt;a href=&#34;https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell&#34;&gt;題目來源&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>CTF_Trial-by-Fire</title>
-      <link>http://localhost:1313/post/trial_by_fire/</link>
-      <pubDate>Wed, 18 Jun 2025 16:50:58 +0800</pubDate>
-      <guid>http://localhost:1313/post/trial_by_fire/</guid>
-      <description>&lt;h1 id=&#34;trial_by_fire&#34;&gt;Trial_by_Fire&lt;/h1&gt;&#xA;&lt;p&gt;這次打的題目是 2025 HTB 上的&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Website on Penguin's Website</title><link>https://lyccyc.github.io/tags/website/</link><description>Recent content in Website on Penguin's Website</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Sun, 29 Jun 2025 22:06:02 +0800</lastBuildDate><atom:link href="https://lyccyc.github.io/tags/website/index.xml" rel="self" type="application/rss+xml"/><item><title>CTF_babyshell</title><link>https://lyccyc.github.io/post/ctf_babyshell/</link><pubDate>Sun, 29 Jun 2025 22:06:02 +0800</pubDate><guid>https://lyccyc.github.io/post/ctf_babyshell/</guid><description>&lt;h1 id="babyshell">BabyShell&lt;/h1>
+&lt;p>這次的題目是由&lt;a href="https://github.com/Chw41">Chw41&lt;/a>出題，&lt;a href="https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell">題目來源&lt;/a>&lt;/p>
+&lt;h2 id="description">Description&lt;/h2>
+&lt;p>BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.&lt;/p></description></item><item><title>CTF_Trial-by-Fire</title><link>https://lyccyc.github.io/post/trial_by_fire/</link><pubDate>Wed, 18 Jun 2025 16:50:58 +0800</pubDate><guid>https://lyccyc.github.io/post/trial_by_fire/</guid><description>&lt;h1 id="trial_by_fire">Trial_by_Fire&lt;/h1>
+&lt;p>這次打的題目是 2025 HTB 上的&lt;/p></description></item></channel></rss>

