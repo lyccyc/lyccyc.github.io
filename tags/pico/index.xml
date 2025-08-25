@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pico on Penguin&#39;s Website</title>
+    <link>https://lyccyc.github.io/tags/pico/</link>
+    <description>Recent content in Pico on Penguin&#39;s Website</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 21 Jul 2025 20:22:58 +0800</lastBuildDate>
+    <atom:link href="https://lyccyc.github.io/tags/pico/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Picoctf Web Medium 1</title>
+      <link>https://lyccyc.github.io/post/picoctf-web-medium-1/</link>
+      <pubDate>Mon, 21 Jul 2025 20:22:58 +0800</pubDate>
+      <guid>https://lyccyc.github.io/post/picoctf-web-medium-1/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

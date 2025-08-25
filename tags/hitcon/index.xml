@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HITCON on Penguin&#39;s Website</title>
-    <link>http://localhost:1313/tags/hitcon/</link>
+    <link>https://lyccyc.github.io/tags/hitcon/</link>
     <description>Recent content in HITCON on Penguin&#39;s Website</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Mon, 25 Aug 2025 19:27:23 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hitcon/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lyccyc.github.io/tags/hitcon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025_HITCON</title>
-      <link>http://localhost:1313/post/2025_hitcon/</link>
+      <link>https://lyccyc.github.io/post/2025_hitcon/</link>
       <pubDate>Mon, 25 Aug 2025 19:27:23 +0800</pubDate>
-      <guid>http://localhost:1313/post/2025_hitcon/</guid>
+      <guid>https://lyccyc.github.io/post/2025_hitcon/</guid>
       <description>&lt;h1 id=&#34;2025-hitcon-心得&#34;&gt;2025 HITCON 心得&lt;/h1&gt;&#xA;&lt;p&gt;這次很幸運獲得 HITCON 的學生補助資格，對於剛踏入資安領域不久的小白而言可說是收穫良多。&lt;/p&gt;&#xA;&lt;p&gt;議程的內容含金量太高，我要獨自升級，就講點有趣的事好了ovo&lt;/p&gt;</description>
     </item>
   </channel>

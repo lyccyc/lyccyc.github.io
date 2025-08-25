@@ -2,24 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CTF on Penguin&#39;s Website</title>
-    <link>http://localhost:1313/tags/ctf/</link>
+    <link>https://lyccyc.github.io/tags/ctf/</link>
     <description>Recent content in CTF on Penguin&#39;s Website</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 29 Jun 2025 22:06:02 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Jul 2025 20:22:58 +0800</lastBuildDate>
+    <atom:link href="https://lyccyc.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Picoctf Web Medium 1</title>
+      <link>https://lyccyc.github.io/post/picoctf-web-medium-1/</link>
+      <pubDate>Mon, 21 Jul 2025 20:22:58 +0800</pubDate>
+      <guid>https://lyccyc.github.io/post/picoctf-web-medium-1/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CTF_babyshell</title>
-      <link>http://localhost:1313/post/ctf_babyshell/</link>
+      <link>https://lyccyc.github.io/post/ctf_babyshell/</link>
       <pubDate>Sun, 29 Jun 2025 22:06:02 +0800</pubDate>
-      <guid>http://localhost:1313/post/ctf_babyshell/</guid>
+      <guid>https://lyccyc.github.io/post/ctf_babyshell/</guid>
       <description>&lt;h1 id=&#34;babyshell&#34;&gt;BabyShell&lt;/h1&gt;&#xA;&lt;p&gt;這次的題目是由&lt;a href=&#34;https://github.com/Chw41&#34;&gt;Chw41&lt;/a&gt;出題，&lt;a href=&#34;https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell&#34;&gt;題目來源&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CTF_Trial-by-Fire</title>
-      <link>http://localhost:1313/post/trial_by_fire/</link>
+      <link>https://lyccyc.github.io/post/trial_by_fire/</link>
       <pubDate>Wed, 18 Jun 2025 16:50:58 +0800</pubDate>
-      <guid>http://localhost:1313/post/trial_by_fire/</guid>
+      <guid>https://lyccyc.github.io/post/trial_by_fire/</guid>
       <description>&lt;h1 id=&#34;trial_by_fire&#34;&gt;Trial_by_Fire&lt;/h1&gt;&#xA;&lt;p&gt;這次打的題目是 2025 HTB 上的&lt;/p&gt;</description>
     </item>
   </channel>
