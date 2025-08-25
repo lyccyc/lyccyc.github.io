@@ -204,7 +204,7 @@
                   <div class="file-actions flex-order-2 pt-0">
                     
                     
-                    <a class="muted-link mr-3" href="/tags/ais3">
+                    <a class="muted-link mr-3" href="../../tags/ais3">
                       <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd"
                           d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
@@ -230,7 +230,7 @@
 <h1 id="misc">Misc</h1>
 <h2 id="welcome">Welcome</h2>
 <h3 id="description">Description</h3>
-<p><img src="/images/image.png" alt="welcome"></p>
+<p><img src="../../images/image.png" alt="welcome"></p>
 <h3 id="solution">Solution</h3>
 <p>複製貼上在搞事 超好笑
 直接手打，通過</p>
@@ -280,20 +280,20 @@ The flag is at /readable_flag_somerandomstring (root directory of the server). Y
 <p>Please solve this challenge locally first then run your solver on the remote instance.</p>
 <h3 id="solution-2">Solution</h3>
 <p>點<a href="http://chals1.ais3.org:20000/login">Challenge Instancer</a>，要輸入CTFd Token</p>
-<p><img src="/images/image-1.png" alt="CTFd"></p>
+<p><img src="../../images/image-1.png" alt="CTFd"></p>
 <p>去官網設定生成一個後進入</p>
-<p><img src="/images/image-2.png" alt="alt text"></p>
+<p><img src="../../images/image-2.png" alt="alt text"></p>
 <p>複製後連線進去，先得到驗證碼，輸入
 (這是後來2025-05-29才截圖的，當下很趕又看到有人說一段時間會關掉server，所以先連線)</p>
 <p>連線後，會看到網頁，提示有說在 <code>/readable_flag_somerandomstring</code></p>
 <p>hmm，<strong>Pathtraversal</strong>?</p>
 <p>好，try try</p>
 <p><code>curl -i http://chals1.ais3.org:20107/%2f%2f/%2f%2f/%2f%2f/%2f%2f/</code></p>
-<p><img src="/images/image-3.png" alt="kali-1"></p>
+<p><img src="../../images/image-3.png" alt="kali-1"></p>
 <p>試了幾個目錄後，終於找到 <code>readable_flag_somerandomstring</code>相關的字樣(反白區塊)</p>
-<p><img src="/images/image-4.png" alt="kali-2"></p>
+<p><img src="../../images/image-4.png" alt="kali-2"></p>
 <p><code>curl -i http://chals1.ais3.org:20107/%2f%2f/%2f%2f/%2f%2f/%2f%2f/readable_flag_QqwUe0eIKGHt2cJGAJIotUwPBF91CdSp</code></p>
-<p><img src="/images/image-5.png" alt="kali-3"></p>
+<p><img src="../../images/image-5.png" alt="kali-3"></p>
 <h3 id="flag-2">Flag</h3>
 <div class="flag-box">
 <strong>
@@ -307,11 +307,11 @@ flag : AIS3{tInY_We8_53RV3R_WITH_FIl3_8R0Ws1ng_AS_@_fe@TuRE}
 <p><a href="http://login-screen.ctftime.uk:36368/">http://login-screen.ctftime.uk:36368/</a></p>
 <p>Note: The flag starts with AIS3{1.</p>
 <h3 id="solution-3">Solution</h3>
-<p><img src="/images/image-6.png" alt="login"></p>
+<p><img src="../../images/image-6.png" alt="login"></p>
 <p>一開始的登入畫面，下面有寫guest/guset可以登入</p>
-<p><img src="/images/image-7.png" alt="2FA">
+<p><img src="../../images/image-7.png" alt="2FA">
 下面一樣說 2FA = 000000</p>
-<p><img src="/images/image-8.png" alt="000000">
+<p><img src="../../images/image-8.png" alt="000000">
 only admin can view thr flag</p>
 <p>一開始猜了好多密碼，甚至用SQL攻擊，都沒效
 最後快放棄抱著隨便輸入的心態</p>
@@ -322,7 +322,7 @@ only admin can view thr flag</p>
 <p>想了很久，甚至寫了爆破程式qwq</p>
 <p>最後用Burp 去查Response</p>
 <p>???我剛剛在幹嘛</p>
-<p><img src="/images/image-9.png" alt="Burp"></p>
+<p><img src="../../images/image-9.png" alt="Burp"></p>
 <h3 id="flag-3">Flag</h3>
 <div class="flag-box">
 <strong>
@@ -371,7 +371,7 @@ flag : AIS3{G01ang_H2v3_a_c0O1_way!!!_Us3ing_C0NN3ct_M3Th07_L0l@T0m0r1n_1s_cute_
 <p>把 tiny 檔案丟進IDA</p>
 <p>view -&gt; string : 搜尋 flag
 看到 <code>Flag Correct</code>之類的字串</p>
-<p><img src="/images/image-10.png" alt="Love-IDA"></p>
+<p><img src="../../images/image-10.png" alt="Love-IDA"></p>
 <p>查看 <code>sub_2110</code> 函式，按F5 ， 發現進到 <code>sub_2110</code> ，再追(F5)</p>
 <p>發現核心:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">v7</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;rikki_l0v3&#34;</span><span class="p">;</span>   <span class="c1">// 作為 XOR key，長度 10
@@ -633,11 +633,11 @@ flag : AIS3{CH3aT_Eng1n3?_0fcau53_I_bo_1T_by_hAnD}
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></div><p>接著回到wasm視窗在func8中設定中斷點查看</p>
 <p>得知每一次的位移分別是 45, 28, 42, 39, 61</p>
-<p><img src="/images/web_flag-1.png" alt="image">
-<img src="/images/web_flag-2.png" alt="image">
-<img src="/images/web_flag-3.png" alt="image">
-<img src="/images/web_flag-4.png" alt="image">
-<img src="/images/web_flag-5.png" alt="image"></p>
+<p><img src="../../images/web_flag-1.png" alt="image">
+<img src="../../images/web_flag-2.png" alt="image">
+<img src="../../images/web_flag-3.png" alt="image">
+<img src="../../images/web_flag-4.png" alt="image">
+<img src="../../images/web_flag-5.png" alt="image"></p>
 <p>最後寫一個script把過程右移回去就會是flag</p>
 <details open> <summary>腳本時間</summary>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rotate_right</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">shift</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
