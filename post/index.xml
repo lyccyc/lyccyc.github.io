@@ -1,11 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Penguin's Website</title><link>https://lyccyc.github.io/post/</link><description>Recent content in Posts on Penguin's Website</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Tue, 05 Aug 2025 11:29:30 +0800</lastBuildDate><atom:link href="https://lyccyc.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2025AIS3_pre-exam</title><link>https://lyccyc.github.io/post/2025ais3_write_ups/</link><pubDate>Tue, 05 Aug 2025 11:29:30 +0800</pubDate><guid>https://lyccyc.github.io/post/2025ais3_write_ups/</guid><description>&lt;h1 id="2025_ais3_writeup">2025_AIS3_Writeup&lt;/h1>
-&lt;blockquote>
-&lt;p>penguin，只是一個 web 仔，不想被收關稅所以來打CTF(關聯???&lt;/p>&lt;/blockquote>
-&lt;p>這次共解了8題，身為 Web 狗，Web 竟然解最少題，但沒關係我就爛&lt;/p>
-&lt;p>最後是 800 points，158名&lt;/p>
-&lt;p>身為資安小白，能打成這樣都要感謝我自己(?&lt;/p>
-&lt;p>未來再接再厲&lt;/p></description></item><item><title>CTF_babyshell</title><link>https://lyccyc.github.io/post/ctf_babyshell/</link><pubDate>Sun, 29 Jun 2025 22:06:02 +0800</pubDate><guid>https://lyccyc.github.io/post/ctf_babyshell/</guid><description>&lt;h1 id="babyshell">BabyShell&lt;/h1>
-&lt;p>這次的題目是由&lt;a href="https://github.com/Chw41">Chw41&lt;/a>出題，&lt;a href="https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell">題目來源&lt;/a>&lt;/p>
-&lt;h2 id="description">Description&lt;/h2>
-&lt;p>BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.&lt;/p></description></item><item><title>CTF_Trial-by-Fire</title><link>https://lyccyc.github.io/post/trial_by_fire/</link><pubDate>Wed, 18 Jun 2025 16:50:58 +0800</pubDate><guid>https://lyccyc.github.io/post/trial_by_fire/</guid><description>&lt;h1 id="trial_by_fire">Trial_by_Fire&lt;/h1>
-&lt;p>這次打的題目是 2025 HTB 上的&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Penguin&#39;s Website</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Penguin&#39;s Website</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 25 Aug 2025 19:27:23 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025_HITCON</title>
+      <link>http://localhost:1313/post/2025_hitcon/</link>
+      <pubDate>Mon, 25 Aug 2025 19:27:23 +0800</pubDate>
+      <guid>http://localhost:1313/post/2025_hitcon/</guid>
+      <description>&lt;h1 id=&#34;2025-hitcon-心得&#34;&gt;2025 HITCON 心得&lt;/h1&gt;&#xA;&lt;p&gt;這次很幸運獲得 HITCON 的學生補助資格，對於剛踏入資安領域不久的小白而言可說是收穫良多。議程的內容含金量太高，我要獨自升級，就講點有趣的事好了ovo&lt;/p&gt;&#xA;&lt;h2 id=&#34;ps-c-gotta-concolic-em-all-exploiting-powershell-vm-to-bring-your-own-symbolic-solver&#34;&gt;PS C:&amp;gt; Gotta Concolic &amp;rsquo;em all: Exploiting PowerShell VM to Bring Your Own Symbolic Solver&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;講者:黃智威、馬聖豪&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;當天早上因為有事報到後先去辦事，下午才進場，大概12:50分到的時候就已經坐滿人了qwq，只好站在側邊乖巧聆聽，還碰巧遇到 AIS3 的助教學姊(歡呼)。結果議程開始前2分鐘，看到一個熟悉又崇拜的身影朝我們這個方向走過來，那個無論何時好像都穿吊嘎的男人，對的沒錯，馬聖豪大大?!&lt;/p&gt;&#xA;&lt;p&gt;可能是我們的注目禮太熾熱，馬大大看著我們解釋: 幹嘛?我又不上台，公司沒人拍照只好叫我來拍@@&lt;/p&gt;&#xA;&lt;p&gt;&amp;hellip;好的，解鎖人生成就&amp;ndash;站在馬聖豪旁邊(聽演講)&lt;/p&gt;&#xA;&lt;p&gt;但是旁邊站著一尊大佬怎麼可能很冷靜，看似鎮定的外表下，Apple Watch 出賣了我的內心:&#xA;&lt;img src=&#34;image.png&#34; alt=&#34;高心率&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;事後想想還是很好笑，不是說初生之犢不怕虎嗎，你這個資安小白在怕屁&lt;/p&gt;&#xA;&lt;h2 id=&#34;只需一次-api-呼叫的致命一擊從硬體逆向到突破保護機制的精準攻擊&#34;&gt;只需一次 API 呼叫的致命一擊：從硬體逆向到突破保護機制的精準攻擊&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;講者: Nini&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Nini 的議程必須聽的吧，說實在整場聽完真的很好笑，還有提到 orange 爸爸。&lt;/p&gt;&#xA;&lt;p&gt;之前在 Thread 上看到 Nini 發布有關 Pwn2Own 比賽的文章就很有興趣，沒想到有天可以親自了解這個過程&lt;/p&gt;&#xA;&lt;p&gt;他們的技術真的只能佩服，希望身為未來 DEVCORE 一員的我可以多加努力，爭取在爸爸退休前和他呼吸同一份空氣(?)&lt;/p&gt;&#xA;&lt;h2 id=&#34;耳機劫持術解鎖你手機的另一把鑰匙&#34;&gt;耳機劫持術：解鎖你手機的另一把鑰匙&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;講者: Dennis Heinze、Julian Suleder&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這場居然有 Live Demo，賺爛了賺爛了&lt;/p&gt;&#xA;&lt;p&gt;更賺的是馬聖豪簽名 get，呀呼~&lt;/p&gt;&#xA;&lt;p&gt;當時的情況是這樣的，我和我朋友三個人在找位置，同排的位置剩兩個，但往上一排有一個位置(事後想想為什麼會有位置，一定是因為馬大大靈壓太強OAO)，總之，anyway，我就這樣順(小)理(心)成(翼)章(翼)的坐到馬聖豪旁邊，然後身為 I 人之恥的我也沒放過這個機會&lt;/p&gt;&#xA;&lt;p&gt;我看向馬大大:那個&amp;hellip;可以請你簽名嗎(乖巧害羞.jpg)&lt;/p&gt;&#xA;&lt;p&gt;馬:喔喔可以啊，只是這個識別證不貼自己名字嗎?&lt;/p&gt;&#xA;&lt;p&gt;我:你的更有性價比(?我在說甚麼笑死)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025AIS3_pre-exam</title>
+      <link>http://localhost:1313/post/2025ais3_write_ups/</link>
+      <pubDate>Tue, 05 Aug 2025 11:29:30 +0800</pubDate>
+      <guid>http://localhost:1313/post/2025ais3_write_ups/</guid>
+      <description>&lt;h1 id=&#34;2025_ais3_writeup&#34;&gt;2025_AIS3_Writeup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;penguin，只是一個 web 仔，不想被收關稅所以來打CTF(關聯???&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這次共解了8題，身為 Web 狗，Web 竟然解最少題，但沒關係我就爛&lt;/p&gt;&#xA;&lt;p&gt;最後是 800 points，158名&lt;/p&gt;&#xA;&lt;p&gt;身為資安小白，能打成這樣都要感謝我自己(?&lt;/p&gt;&#xA;&lt;p&gt;未來再接再厲&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CTF_babyshell</title>
+      <link>http://localhost:1313/post/ctf_babyshell/</link>
+      <pubDate>Sun, 29 Jun 2025 22:06:02 +0800</pubDate>
+      <guid>http://localhost:1313/post/ctf_babyshell/</guid>
+      <description>&lt;h1 id=&#34;babyshell&#34;&gt;BabyShell&lt;/h1&gt;&#xA;&lt;p&gt;這次的題目是由&lt;a href=&#34;https://github.com/Chw41&#34;&gt;Chw41&lt;/a&gt;出題，&lt;a href=&#34;https://github.com/Chw41/Individual-CTF-Topic/tree/main/BabyShell&#34;&gt;題目來源&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;BabyShell is a Capture The Flag (CTF) challenge designed to test your skills in exploiting a simple web shell technique. The challenge involves leveraging the getTime() function to retrieve the current time, which is crucial for solving the puzzle.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CTF_Trial-by-Fire</title>
+      <link>http://localhost:1313/post/trial_by_fire/</link>
+      <pubDate>Wed, 18 Jun 2025 16:50:58 +0800</pubDate>
+      <guid>http://localhost:1313/post/trial_by_fire/</guid>
+      <description>&lt;h1 id=&#34;trial_by_fire&#34;&gt;Trial_by_Fire&lt;/h1&gt;&#xA;&lt;p&gt;這次打的題目是 2025 HTB 上的&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

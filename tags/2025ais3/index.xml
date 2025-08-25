@@ -1,7 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2025AIS3 on Penguin's Website</title><link>https://lyccyc.github.io/tags/2025ais3/</link><description>Recent content in 2025AIS3 on Penguin's Website</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Tue, 05 Aug 2025 11:29:30 +0800</lastBuildDate><atom:link href="https://lyccyc.github.io/tags/2025ais3/index.xml" rel="self" type="application/rss+xml"/><item><title>2025AIS3_pre-exam</title><link>https://lyccyc.github.io/post/2025ais3_write_ups/</link><pubDate>Tue, 05 Aug 2025 11:29:30 +0800</pubDate><guid>https://lyccyc.github.io/post/2025ais3_write_ups/</guid><description>&lt;h1 id="2025_ais3_writeup">2025_AIS3_Writeup&lt;/h1>
-&lt;blockquote>
-&lt;p>penguin，只是一個 web 仔，不想被收關稅所以來打CTF(關聯???&lt;/p>&lt;/blockquote>
-&lt;p>這次共解了8題，身為 Web 狗，Web 竟然解最少題，但沒關係我就爛&lt;/p>
-&lt;p>最後是 800 points，158名&lt;/p>
-&lt;p>身為資安小白，能打成這樣都要感謝我自己(?&lt;/p>
-&lt;p>未來再接再厲&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2025AIS3 on Penguin&#39;s Website</title>
+    <link>http://localhost:1313/tags/2025ais3/</link>
+    <description>Recent content in 2025AIS3 on Penguin&#39;s Website</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 05 Aug 2025 11:29:30 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/2025ais3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025AIS3_pre-exam</title>
+      <link>http://localhost:1313/post/2025ais3_write_ups/</link>
+      <pubDate>Tue, 05 Aug 2025 11:29:30 +0800</pubDate>
+      <guid>http://localhost:1313/post/2025ais3_write_ups/</guid>
+      <description>&lt;h1 id=&#34;2025_ais3_writeup&#34;&gt;2025_AIS3_Writeup&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;penguin，只是一個 web 仔，不想被收關稅所以來打CTF(關聯???&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這次共解了8題，身為 Web 狗，Web 竟然解最少題，但沒關係我就爛&lt;/p&gt;&#xA;&lt;p&gt;最後是 800 points，158名&lt;/p&gt;&#xA;&lt;p&gt;身為資安小白，能打成這樣都要感謝我自己(?&lt;/p&gt;&#xA;&lt;p&gt;未來再接再厲&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
