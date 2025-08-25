@@ -6,13 +6,20 @@
     <description>Recent content in Tags on Penguin&#39;s Website</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 05 Aug 2025 11:29:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Aug 2025 19:27:23 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2025AIS3</title>
-      <link>http://localhost:1313/tags/2025ais3/</link>
+      <title>HITCON</title>
+      <link>http://localhost:1313/tags/hitcon/</link>
+      <pubDate>Mon, 25 Aug 2025 19:27:23 +0800</pubDate>
+      <guid>http://localhost:1313/tags/hitcon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AIS3</title>
+      <link>http://localhost:1313/tags/ais3/</link>
       <pubDate>Tue, 05 Aug 2025 11:29:30 +0800</pubDate>
-      <guid>http://localhost:1313/tags/2025ais3/</guid>
+      <guid>http://localhost:1313/tags/ais3/</guid>
       <description></description>
     </item>
     <item>
