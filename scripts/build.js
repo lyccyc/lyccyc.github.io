@@ -1,10 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const { marked } = require('marked');
-const matter = require('gray-matter');
-const hljs = require('highlight.js');
-const generateLayout = require('../components/layout');
-const generateContributionGraph = require('../components/contributionGraph');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { marked } from 'marked';
+import matter from 'gray-matter';
+import hljs from 'highlight.js';
+import generateLayout from '../components/layout.js';
+import generateContributionGraph from '../components/contributionGraph.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configure Marked to use Highlight.js
 marked.setOptions({

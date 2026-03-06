@@ -21,4 +21,4 @@ function generateContributionGraph() {
     `;
 }
 
-module.exports = generateContributionGraph;
+export default generateContributionGraph;

@@ -1,4 +1,4 @@
-const sidebar = require('./sidebar');
+import sidebar from './sidebar.js';
 
 function generateLayout({ title, content, currentPath = '/' }) {
     const depth = Math.max(0, currentPath.split('/').filter(Boolean).length - 1);
@@ -83,4 +83,4 @@ function generateLayout({ title, content, currentPath = '/' }) {
 </html>`;
 }
 
-module.exports = generateLayout;
+export default generateLayout;

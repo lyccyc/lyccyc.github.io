@@ -36,4 +36,4 @@ function generateSidebar({ base }) {
     `;
 }
 
-module.exports = generateSidebar;
+export default generateSidebar;
