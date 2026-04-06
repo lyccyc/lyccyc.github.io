@@ -20,16 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateIcons(newTheme);
         updateHighlightTheme(newTheme);
 
-        // Trigger cat bounce animation
-        const catSvg = document.getElementById('cat-svg');
-        if (catSvg) {
-            catSvg.classList.remove('cat-bounce');
-            void catSvg.offsetWidth; // reflow to restart animation
-            catSvg.classList.add('cat-bounce');
-            catSvg.addEventListener('animationend', () => {
-                catSvg.classList.remove('cat-bounce');
-            }, { once: true });
-        }
     });
 
     function updateIcons(theme) {
@@ -52,35 +42,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Cat eye tracking (subtle mouse follow)
     const catSvg = document.getElementById('cat-svg');
-    const pupils = document.querySelectorAll('.cat-pupil');
+    const catEyes = [
+        document.getElementById('cat-eye-left'),
+        document.getElementById('cat-eye-right'),
+    ].filter(Boolean);
 
-    if (catSvg && pupils.length > 0) {
-        document.addEventListener('mousemove', (e) => {
-            const rect = catSvg.getBoundingClientRect();
-            // Calculate center of the cat SVG
-            const catCenterX = rect.left + rect.width / 2;
-            const catCenterY = rect.top + rect.height / 2;
+    if (catSvg && catEyes.length > 0) {
+        const eyeMotion = {
+            maxOffset: 3,
+            smoothing: 0.16,
+        };
+        const pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        const currentOffset = { x: 0, y: 0 };
+        let frameId = null;
 
-            // Delta from cursor to cat center
-            const deltaX = e.clientX - catCenterX;
-            const deltaY = e.clientY - catCenterY;
+        const renderEyes = () => {
+            currentOffset.x += (pointer.x - currentOffset.x) * eyeMotion.smoothing;
+            currentOffset.y += (pointer.y - currentOffset.y) * eyeMotion.smoothing;
 
-            // Limit the maximum pixel movement so eyes stay inside the cat
-            const maxMove = 3;
-
-            // Scale movement softly based on screen distance
-            const percentX = deltaX / (window.innerWidth / 2);
-            const percentY = deltaY / (window.innerHeight / 2);
-
-            const moveX = Math.max(-maxMove, Math.min(maxMove, percentX * maxMove * 1.5));
-            const moveY = Math.max(-maxMove, Math.min(maxMove, percentY * maxMove * 1.5));
-
-            // Apply lightweight SVG transform
-            pupils.forEach(pupil => {
-                pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            catEyes.forEach((eye) => {
+                const eyeX = Number(eye.dataset.eyeX);
+                const eyeY = Number(eye.dataset.eyeY);
+                const rect = catSvg.getBoundingClientRect();
+                const scaleX = rect.width / 512;
+                const scaleY = rect.height / 512;
+                const screenX = rect.left + eyeX * scaleX;
+                const screenY = rect.top + eyeY * scaleY;
+                const deltaX = currentOffset.x - screenX;
+                const deltaY = currentOffset.y - screenY;
+                const distance = Math.hypot(deltaX, deltaY) || 1;
+                const limitedDistance = Math.min(eyeMotion.maxOffset, distance / 18);
+                const moveX = (deltaX / distance) * limitedDistance;
+                const moveY = (deltaY / distance) * limitedDistance;
+                eye.style.transform = `translate(${moveX}px, ${moveY}px)`;
             });
+
+            frameId = window.requestAnimationFrame(renderEyes);
+        };
+
+        document.addEventListener('mousemove', (event) => {
+            pointer.x = event.clientX;
+            pointer.y = event.clientY;
         });
+
+        document.addEventListener('mouseleave', () => {
+            pointer.x = window.innerWidth / 2;
+            pointer.y = window.innerHeight / 2;
+        });
+
+        window.addEventListener('blur', () => {
+            pointer.x = window.innerWidth / 2;
+            pointer.y = window.innerHeight / 2;
+        });
+
+        if (frameId === null) {
+            frameId = window.requestAnimationFrame(renderEyes);
+        }
     }
 });

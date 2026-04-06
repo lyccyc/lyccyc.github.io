@@ -19,43 +19,38 @@ function generateLayout({ title, content, currentPath = '/' }) {
 <body>
     <header class="header">
         <div class="header-nav">
-            <div>
+            <div class="header-brand">
                 <img src="${base}images/avatar.png" height="32" width="32" alt="Logo" style="border-radius: 50%;">
                 <a href="${base}index.html">Penguin's Blog</a>
             </div>
-            <div class="header-cat-area">
-                <svg class="cat-svg" id="cat-svg" viewBox="0 0 120 100" width="48" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cat illustration">
-                    <!-- Left ear -->
-                    <path class="cat-ear cat-ear-left" d="M25 45 L15 15 L40 30 Z" stroke-width="2.5" stroke-linejoin="round"/>
-                    <!-- Right ear -->
-                    <path class="cat-ear cat-ear-right" d="M95 45 L105 15 L80 30 Z" stroke-width="2.5" stroke-linejoin="round"/>
-                    <!-- Inner left ear -->
-                    <path class="cat-ear-inner" d="M27 40 L21 22 L37 32 Z" stroke-width="0" fill="none"/>
-                    <!-- Inner right ear -->
-                    <path class="cat-ear-inner" d="M93 40 L99 22 L83 32 Z" stroke-width="0" fill="none"/>
-                    <!-- Head -->
-                    <ellipse class="cat-head" cx="60" cy="55" rx="38" ry="32" stroke-width="2.5"/>
-                    <!-- Left eye -->
-                    <circle class="cat-eye cat-eye-left" cx="45" cy="50" r="4.5"/>
-                    <!-- Right eye -->
-                    <circle class="cat-eye cat-eye-right" cx="75" cy="50" r="4.5"/>
-                    <!-- Left pupil -->
-                    <circle class="cat-pupil" cx="46" cy="49" r="2"/>
-                    <!-- Right pupil -->
-                    <circle class="cat-pupil" cx="76" cy="49" r="2"/>
-                    <!-- Nose -->
-                    <path class="cat-nose" d="M57 60 L60 64 L63 60 Z" stroke-width="1.5" stroke-linejoin="round"/>
-                    <!-- Mouth -->
-                    <path class="cat-mouth" d="M60 64 Q57 69 52 67" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                    <path class="cat-mouth" d="M60 64 Q63 69 68 67" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                    <!-- Left whiskers -->
-                    <line class="cat-whisker cat-whisker-left" x1="38" y1="58" x2="12" y2="54" stroke-width="1.5" stroke-linecap="round"/>
-                    <line class="cat-whisker cat-whisker-left" x1="38" y1="62" x2="12" y2="63" stroke-width="1.5" stroke-linecap="round"/>
-                    <line class="cat-whisker cat-whisker-left" x1="38" y1="66" x2="14" y2="72" stroke-width="1.5" stroke-linecap="round"/>
-                    <!-- Right whiskers -->
-                    <line class="cat-whisker cat-whisker-right" x1="82" y1="58" x2="108" y2="54" stroke-width="1.5" stroke-linecap="round"/>
-                    <line class="cat-whisker cat-whisker-right" x1="82" y1="62" x2="108" y2="63" stroke-width="1.5" stroke-linecap="round"/>
-                    <line class="cat-whisker cat-whisker-right" x1="82" y1="66" x2="106" y2="72" stroke-width="1.5" stroke-linecap="round"/>
+            <div class="header-mascot" aria-hidden="true">
+                <svg class="cat-svg" id="cat-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-label="Cat mascot">
+                    <path class="cat-art" d="M504.302,195.59c-10.618-6.362-29.71-43.514-33.959-47.755c-4.249-4.256-28.662-13.81-28.662-13.81
+		l-13.795-43.514c-26.542,3.185-42.449,45.634-43.513,48.819c0,0-2.661,73.764-120.47,45.11
+		c-84.437-20.54-135.22-40.407-177.872-0.36c-2.668-4.578-4.491-9.234-5.822-14.257c-2.378-9.062-2.918-19.46-2.91-31.308
+		c0-5.806,0.109-11.924,0.117-18.34c-0.008-13.436-0.493-28.248-4.046-44.015C69.85,60.386,63.136,43.743,51.344,27.162
+		c-5.086-7.168-15.024-8.858-22.199-3.764c-7.167,5.094-8.858,15.031-3.764,22.199c9.304,13.145,14.162,25.368,16.932,37.551
+		c2.739,12.167,3.271,24.397,3.264,37.027c0,6.024-0.118,12.136-0.118,18.34c0.016,12.646,0.438,25.799,3.928,39.32
+		c2.746,10.735,7.722,21.58,15.508,31.706C31.93,261.458,50.037,316.584,50.037,316.584l-34.093,54.241
+		c-0.618,0.978-1.033,2.066-1.244,3.192L0.146,454.073c-0.641,3.521,0.862,7.08,3.819,9.084l40.979,27.763
+		c0.876,0.602,1.964,0.775,2.981,0.493c1.026-0.274,1.863-0.994,2.308-1.949l8.326-17.825c0.618-1.338,0.368-2.918-0.634-3.998
+		l-10.728-11.448c-2.182-2.324-2.973-5.634-2.081-8.701l17.84-61.033c0.579-1.948,1.784-3.646,3.435-4.82l23.983-17.058
+		c3.255-2.332,7.66-2.222,10.806,0.251c3.146,2.472,4.288,6.721,2.809,10.438L93.41,401.858c-1.22,3.051-0.681,6.525,1.401,9.06
+		l60.298,73.365h45.218c1.996,0,3.616-1.62,3.616-3.607v-22.504c0-1.996-1.62-3.615-3.616-3.615h-14.303
+		c-3.342,0-6.409-1.854-7.982-4.804l-24.484-41.049c-1.643-3.106-1.33-6.87,0.783-9.663l21.948-28.999
+		c1.706-2.245,4.367-3.575,7.192-3.575h61.197c2.872,0,5.579,1.376,7.277,3.701c1.698,2.324,2.191,5.313,1.33,8.059l-19.726,62.16
+		c-0.626,1.957-0.564,4.077,0.18,5.994l12.653,32.598h39.272v-8.49l-6.494-20.415c-0.61-1.909-0.563-3.967,0.133-5.852
+		l26.471-71.847c1.315-3.553,4.694-5.908,8.474-5.908h27.011c2.449,0,4.796,1.002,6.502,2.777l74.813,103.365c0,0,38.208,0,50.947,0
+		c12.738,0,7.809-25.414-4.241-26.542c-22.826-2.12-52.004-65.798-64.742-88.09c-12.739-22.285,24.664-91.299,53.067-94.453
+		c28.654-3.185,43.514-14.867,47.763-30.79C513.856,223.187,514.92,201.959,504.302,195.59z"/>
+                    <circle class="cat-eye-socket" cx="53" cy="135" r="11"/>
+                    <circle class="cat-eye-socket" cx="92" cy="127" r="11"/>
+                    <g id="cat-eye-left" data-eye-x="53" data-eye-y="135">
+                        <circle class="cat-pupil" cx="53" cy="135" r="5.2"/>
+                    </g>
+                    <g id="cat-eye-right" data-eye-x="92" data-eye-y="127">
+                        <circle class="cat-pupil" cx="92" cy="127" r="5.2"/>
+                    </g>
                 </svg>
             </div>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
