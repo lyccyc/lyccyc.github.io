@@ -644,3 +644,31 @@ a:hover {
   gap: 16px;
   align-items: center;
 }
+
+/* Info（藍色） */
+.info-box {
+  background-color: rgba(3, 174, 210, 0.1);
+  border-left: 4px solid #03AED2;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+}
+
+/* Warning（紅色） */
+.warning-box {
+  background-color: rgba(209, 32, 82, 0.1);
+  border-left: 4px solid #D12052;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+}
+
+/* Flag（黃色） */
+.flag-box {
+  background-color: rgba(248, 222, 34, 0.15);
+  border-left: 4px solid #F8DE22;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  font-family: monospace;
+}
