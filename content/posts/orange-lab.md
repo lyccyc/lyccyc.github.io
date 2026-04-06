@@ -102,12 +102,12 @@ MySQL [(none)]> SHOW VARIABLES LIKE "secure_file_priv";
 | secure_file_priv | /var/lib/mysql-files/ |
 +------------------+-----------------------+
 ```
-:::info
+<div class="info-box">
 mysql 中對於匯入匯出的檔案路徑有限制。一般來說分為三種:
 1. 指定目錄 : 只允許在特定目錄操作
 2. NULL : 完全禁止文件操作
 3. 空值 : 可以進行任意操作
-:::
+</div>
 
 
 `secure_file_priv` 被設定在 `/var/lib/mysql-files/`，代表無法將 Webshell 寫入`/var/www/html/` 或其他地方
@@ -245,7 +245,8 @@ Current database: information_schema
 事後看 source code 分析原因
 
 部分 source code 如下:
-:::spoiler source code
+<details close><summary>source code</summary>
+
 ```php
 $data = <<<EOF
 <?php
@@ -256,7 +257,7 @@ $data = <<<EOF
 ?>
 EOF;
 ```
-::: 
+</details>
 
 如果塞入上面那串 payload PHP 會解析成
 
