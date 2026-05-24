@@ -29,9 +29,11 @@ function generateSidebar({ base }) {
     <a href="${base}tags/CTF/index.html" class="tag">CTF</a>
     <a href="${base}tags/pwn/index.html" class="tag">pwn</a>
     <a href="${base}tags/web/index.html" class="tag">web</a>
-    <a href="${base}tags/AI/index.html" class="tag">AI</a>
     <a href="${base}tags/AIS3/index.html" class="tag">AIS3</a>
     <a href="${base}tags/HITCON/index.html" class="tag">HITCON</a>
+    <a href="${base}tags/Tutorial/index.html" class="tag">Tutorial</a>
+    <a href="${base}tags/CVE/index.html" class="tag">CVE</a>
+    <a href="${base}tags/pwnable-xyz/index.html" class="tag">pwnable.xyz</a>
 </div>
     `;
 }

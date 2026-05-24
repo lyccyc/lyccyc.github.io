@@ -91,8 +91,12 @@ function formatDate(dateObj) {
     return dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
+function tagToSlug(tag) {
+    return encodeURIComponent(tag.trim().replace(/\s+/g, '-').replace(/\./g, '-'));
+}
+
 function generatePostCard(post, base = './') {
-    const tagsHtml = post.tags.map(tag => `<a href="${base}tags/${tag}/index.html" class="tag">${tag}</a>`).join('');
+    const tagsHtml = post.tags.map(tag => `<a href="${base}tags/${tagToSlug(tag)}/index.html" class="tag">${tag}</a>`).join('');
     return `
     <div class="repo-card">
         <h3><a href="${base}posts/${post.slug}/index.html">${post.title}</a></h3>
@@ -209,7 +213,7 @@ posts.forEach((post, index) => {
     const postDir = path.join(PUBLIC_DIR, 'posts', post.slug);
     ensureDirSync(postDir);
 
-    const tagsHtml = post.tags.map(tag => `<a href="../../tags/${tag}/index.html" class="tag">${tag}</a>`).join('');
+    const tagsHtml = post.tags.map(tag => `<a href="../../tags/${tagToSlug(tag)}/index.html" class="tag">${tag}</a>`).join('');
 
     let prevHtml = '';
     let nextHtml = '';
@@ -265,7 +269,7 @@ ensureDirSync(path.join(PUBLIC_DIR, 'tags'));
 const allTagsHtmlContent = `
     <h3 style="margin-bottom:16px;">All Tags</h3>
     <div class="tag-cloud" style="display:flex; flex-wrap:wrap; gap:8px;">
-        ${Object.keys(tagsMap).map(tag => `<a href="${tag}/index.html" class="tag" style="margin:0;">${tag} (${tagsMap[tag].length})</a>`).join('')}
+        ${Object.keys(tagsMap).map(tag => `<a href="${tagToSlug(tag)}/index.html" class="tag" style="margin:0;">${tag} (${tagsMap[tag].length})</a>`).join('')}
     </div>
 `;
 const tagsIndexHtml = generateLayout({
@@ -277,7 +281,8 @@ fs.writeFileSync(path.join(PUBLIC_DIR, 'tags', 'index.html'), tagsIndexHtml);
 
 Object.keys(tagsMap).forEach(tag => {
     const tagPosts = tagsMap[tag];
-    const tagDir = path.join(PUBLIC_DIR, 'tags', tag);
+    const tagSlug = tagToSlug(tag);
+    const tagDir = path.join(PUBLIC_DIR, 'tags', tagSlug);
     ensureDirSync(tagDir);
 
     const content = `
@@ -290,10 +295,27 @@ Object.keys(tagsMap).forEach(tag => {
     const html = generateLayout({
         title: `Tag: ${tag} - Penguin's Blog`,
         content: content,
-        currentPath: `tags/${tag}/index.html`
+        currentPath: `tags/${tagSlug}/index.html`
     });
 
     fs.writeFileSync(path.join(tagDir, 'index.html'), html);
+
+    if (tagSlug !== tag && !tag.includes('/') && !tag.includes('\\')) {
+        const legacyTagDir = path.join(PUBLIC_DIR, 'tags', tag);
+        ensureDirSync(legacyTagDir);
+        fs.writeFileSync(path.join(legacyTagDir, 'index.html'), `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=../${tagSlug}/index.html">
+    <link rel="canonical" href="../${tagSlug}/index.html">
+    <title>Redirecting to ${tag}</title>
+</head>
+<body>
+    <p>Redirecting to <a href="../${tagSlug}/index.html">${tag}</a>.</p>
+</body>
+</html>`);
+    }
 });
 
 console.log('Build complete! Generated ' + posts.length + ' posts.');
