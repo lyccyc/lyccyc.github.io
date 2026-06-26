@@ -347,3 +347,8 @@ output:
 [漏洞复现之DouPHP_v1.5_Release_20190711cms代码执行漏洞的利用与防御](https://blog.csdn.net/weixin_64551911/article/details/123690065)
 
 [PHP中双引号引起的命令执行漏洞](https://www.0x002.com/2018/PHP%E4%B8%AD%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%BC%95%E8%B5%B7%E7%9A%84%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/)
+
+
+## Original post
+
+[Link](https://hackmd.io/@Penguin-cyc/HyA7MgItZg)
